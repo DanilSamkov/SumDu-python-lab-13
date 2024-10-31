@@ -1,0 +1,25 @@
+{
+    "students": [
+        {
+            "first_name": "Царук",
+            "last_name": "Науменко",
+            "age": "20",
+            "course": "2",
+            "average_score": "4.5"
+        },
+        {
+            "first_name": "Яснолик",
+            "last_name": "Улинець",
+            "age": "19",
+            "course": "1",
+            "average_score": "4.7"
+        },
+        {
+            "first_name": "Романа",
+            "last_name": "Ничипоренко",
+            "age": "21",
+            "course": "3",
+            "average_score": "4.3"
+        }
+    ]
+}
