@@ -40,3 +40,41 @@ if __name__ == "__main__":
     main()
 
 
+# Частина коду написана студентом КН-32/2 Святішенком Дмитром Олександровичем
+# Переписує дані з JSON у CSV з додаванням нових рядків
+def rewrite_json_to_csv(json_filename, csv_filename, additional_rows):
+    try:
+        # Зчитування даних із JSON-файлу
+        with open(json_filename, mode="r", encoding="utf-8") as jsonfile:
+            data = json.load(jsonfile)
+            students = data.get("students", [])
+
+        # Додавання нових рядків до списку студентів
+        students.extend(additional_rows)
+
+        # Запис даних у CSV-файл
+        with open(csv_filename, mode="w", newline="", encoding="utf-8") as csvfile:
+            fieldnames = ["first_name", "last_name", "age", "course", "average_score"]
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for student in students:
+                writer.writerow(student)
+
+        print(f"Дані успішно переписано у CSV файл '{csv_filename}'.")
+    except (IOError, json.JSONDecodeError) as e:
+        print(f"Помилка при роботі з файлами: {e}")
+
+def main():
+    json_filename = "students.json"
+    csv_filename = "updated_students.csv"
+
+    # Додаткові студенти, яких потрібно додати
+    additional_rows = [
+        {"first_name": "Коваль", "last_name": "Іванов", "age": 22, "course": 4, "average_score": 4.2},
+        {"first_name": "Олена", "last_name": "Смирнова", "age": 18, "course": 1, "average_score": 4.8},
+    ]
+
+    rewrite_json_to_csv(json_filename, csv_filename, additional_rows)
+
+if __name__ == "__main__":
+    main()
