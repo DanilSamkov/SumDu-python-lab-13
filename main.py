@@ -78,3 +78,43 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# Частина коду написана студентом КН-31/2 Лендою Микитою Романовичем
+# Переписує дані з CSV у JSON з додаванням нових рядків
+def upgrade_csv_to_json(csv_filename, json_filename, additional_data):
+    data = {"students": []}
+
+    try:
+        # Читання даних із CSV та запис у список
+        with open(csv_filename, mode="r", encoding="utf-8") as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                data["students"].append(row)
+
+        # Додавання нових записів
+        data["students"].extend(additional_data)
+
+        # Запис результату у JSON-файл
+        with open(json_filename, mode="w", encoding="utf-8") as jsonfile:
+            json.dump(data, jsonfile, indent=4, ensure_ascii=False)
+
+        print(f"JSON файл '{json_filename}' успішно створено та оновлено.")
+    except IOError as e:
+        print(f"Помилка при роботі з файлами: {e}")
+
+
+def main():
+    csv_filename = "updated_students.csv"
+    json_filename = "students_3.json"
+
+    # Додаткові дані
+    additional_data = [
+        {"first_name": "Марія", "last_name": "Гриценко", "age": 21, "course": 3, "average_score": 4.6},
+        {"first_name": "Андрій", "last_name": "Шевченко", "age": 20, "course": 2, "average_score": 4.9},
+    ]
+
+    upgrade_csv_to_json(csv_filename, json_filename, additional_data)
+
+if __name__ == "__main__":
+    main()

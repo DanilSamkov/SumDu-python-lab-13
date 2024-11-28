@@ -1,0 +1,53 @@
+{
+    "students": [
+        {
+            "first_name": "Царук",
+            "last_name": "Науменко",
+            "age": "20",
+            "course": "2",
+            "average_score": "4.5"
+        },
+        {
+            "first_name": "Яснолик",
+            "last_name": "Улинець",
+            "age": "19",
+            "course": "1",
+            "average_score": "4.7"
+        },
+        {
+            "first_name": "Романа",
+            "last_name": "Ничипоренко",
+            "age": "21",
+            "course": "3",
+            "average_score": "4.3"
+        },
+        {
+            "first_name": "Коваль",
+            "last_name": "Іванов",
+            "age": "22",
+            "course": "4",
+            "average_score": "4.2"
+        },
+        {
+            "first_name": "Олена",
+            "last_name": "Смирнова",
+            "age": "18",
+            "course": "1",
+            "average_score": "4.8"
+        },
+        {
+            "first_name": "Марія",
+            "last_name": "Гриценко",
+            "age": 21,
+            "course": 3,
+            "average_score": 4.6
+        },
+        {
+            "first_name": "Андрій",
+            "last_name": "Шевченко",
+            "age": 20,
+            "course": 2,
+            "average_score": 4.9
+        }
+    ]
+}
